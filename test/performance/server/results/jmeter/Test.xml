@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testResults version="1.2">
+<httpSample t="15790" lt="15789" ts="1344848977109" s="true" lb="Test" rc="200" rm="OK" tn="Drupal FrameWork_HTTP Requests 1-2" dt="text" by="49608"/>
+<httpSample t="15301" lt="15261" ts="1344848978093" s="true" lb="Test" rc="200" rm="OK" tn="Drupal FrameWork_HTTP Requests 1-3" dt="text" by="49608"/>
+<httpSample t="15437" lt="15210" ts="1344848980109" s="true" lb="Test" rc="200" rm="OK" tn="Drupal FrameWork_HTTP Requests 1-5" dt="text" by="49608"/>
+<httpSample t="19325" lt="19172" ts="1344848976250" s="true" lb="Test" rc="200" rm="OK" tn="Drupal FrameWork_HTTP Requests 1-1" dt="text" by="49608"/>
+<httpSample t="17229" lt="17113" ts="1344848979109" s="true" lb="Test" rc="200" rm="OK" tn="Drupal FrameWork_HTTP Requests 1-4" dt="text" by="49608"/>
+<httpSample t="5799" lt="5758" ts="1344848992984" s="true" lb="Test" rc="200" rm="OK" tn="Drupal FrameWork_HTTP Requests 1-2" dt="text" by="49607"/>
+<httpSample t="5889" lt="5824" ts="1344848993406" s="true" lb="Test" rc="200" rm="OK" tn="Drupal FrameWork_HTTP Requests 1-3" dt="text" by="49607"/>
+<httpSample t="4619" lt="4559" ts="1344848998781" s="true" lb="Test" rc="200" rm="OK" tn="Drupal FrameWork_HTTP Requests 1-2" dt="text" by="49607"/>
+<httpSample t="6905" lt="6849" ts="1344848999300" s="true" lb="Test" rc="200" rm="OK" tn="Drupal FrameWork_HTTP Requests 1-3" dt="text" by="49607"/>
+<httpSample t="5996" lt="5944" ts="1344849003406" s="true" lb="Test" rc="200" rm="OK" tn="Drupal FrameWork_HTTP Requests 1-2" dt="text" by="49607"/>
+<httpSample t="15549" lt="15480" ts="1344848995578" s="true" lb="Test" rc="200" rm="OK" tn="Drupal FrameWork_HTTP Requests 1-1" dt="text" by="49607"/>
+<httpSample t="6896" lt="6857" ts="1344849006203" s="true" lb="Test" rc="200" rm="OK" tn="Drupal FrameWork_HTTP Requests 1-3" dt="text" by="49607"/>
+<httpSample t="17927" lt="17837" ts="1344848996343" s="true" lb="Test" rc="200" rm="OK" tn="Drupal FrameWork_HTTP Requests 1-4" dt="text" by="49607"/>
+<httpSample t="4895" lt="4801" ts="1344849009406" s="true" lb="Test" rc="200" rm="OK" tn="Drupal FrameWork_HTTP Requests 1-2" dt="text" by="49607"/>
+<httpSample t="19375" lt="19293" ts="1344848995546" s="true" lb="Test" rc="200" rm="OK" tn="Drupal FrameWork_HTTP Requests 1-5" dt="text" by="49607"/>
+<httpSample t="4343" lt="4277" ts="1344849013109" s="true" lb="Test" rc="200" rm="OK" tn="Drupal FrameWork_HTTP Requests 1-3" dt="text" by="49607"/>
+<httpSample t="9715" lt="9669" ts="1344849011125" s="true" lb="Test" rc="200" rm="OK" tn="Drupal FrameWork_HTTP Requests 1-1" dt="text" by="49607"/>
+<httpSample t="9235" lt="9193" ts="1344849014265" s="true" lb="Test" rc="200" rm="OK" tn="Drupal FrameWork_HTTP Requests 1-4" dt="text" by="49607"/>
+<httpSample t="9147" lt="9096" ts="1344849014921" s="true" lb="Test" rc="200" rm="OK" tn="Drupal FrameWork_HTTP Requests 1-5" dt="text" by="49607"/>
+<httpSample t="5011" lt="4947" ts="1344849020843" s="true" lb="Test" rc="200" rm="OK" tn="Drupal FrameWork_HTTP Requests 1-1" dt="text" by="49607"/>
+<httpSample t="6552" lt="6478" ts="1344849023515" s="true" lb="Test" rc="200" rm="OK" tn="Drupal FrameWork_HTTP Requests 1-4" dt="text" by="49607"/>
+<httpSample t="6330" lt="6291" ts="1344849024078" s="true" lb="Test" rc="200" rm="OK" tn="Drupal FrameWork_HTTP Requests 1-5" dt="text" by="49607"/>
+<httpSample t="5501" lt="5458" ts="1344849025859" s="true" lb="Test" rc="200" rm="OK" tn="Drupal FrameWork_HTTP Requests 1-1" dt="text" by="49607"/>
+<httpSample t="4372" lt="4331" ts="1344849030062" s="true" lb="Test" rc="200" rm="OK" tn="Drupal FrameWork_HTTP Requests 1-4" dt="text" by="49607"/>
+<httpSample t="4425" lt="4368" ts="1344849030406" s="true" lb="Test" rc="200" rm="OK" tn="Drupal FrameWork_HTTP Requests 1-5" dt="text" by="49607"/>
+
+</testResults>

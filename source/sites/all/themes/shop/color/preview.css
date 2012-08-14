@@ -1,0 +1,79 @@
+/*
+ * ###
+ * PHR_DrupalEshop
+ * %%
+ * Copyright (C) 1999 - 2012 Photon Infotech Inc.
+ * %%
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ * ###
+ */
+
+/* Positioning */
+#preview {
+  overflow: hidden;
+  max-width: 100%;
+}
+#preview,
+#preview #img {
+  width: 600px;
+  height: 371px;
+}
+#preview #gradient-0 {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 19px;
+  height: 120px;
+  z-index: 2;
+}
+#preview #text {
+  position: absolute;
+  left: 80px;
+  width: 436px;
+  top: 160px;
+  height: 120px;
+  z-index: 4;
+}
+#preview #img {
+  position: relative;
+  z-index: 3;
+  background-image: url(preview.png);
+}
+#preview #gradient-0 .gradient-line {
+  height: 10px;
+  overflow: hidden;
+}
+
+/* Basic styles to match */
+#preview {
+  font: 12px/170% Verdana;
+}
+#preview h2 {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 160%;
+  line-height: 130%;
+}
+#preview p {
+  margin: .5em 0;
+}
+#preview a:link,
+#preview a:visited {
+  text-decoration: none;
+  font-weight: normal;
+}
+#preview a:hover {
+  text-decoration: underline;
+}

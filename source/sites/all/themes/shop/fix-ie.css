@@ -1,0 +1,84 @@
+/*
+ * ###
+ * PHR_DrupalEshop
+ * %%
+ * Copyright (C) 1999 - 2012 Photon Infotech Inc.
+ * %%
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ * ###
+ */
+
+body {
+  /* Center layout */
+  text-align: center;
+}
+
+#header-region,
+#wrapper #container {
+  /* Reset text alignment */
+  text-align: left; /* LTR */
+}
+
+#wrapper #container #center {
+  /* Reduce amount of damage done by extremely wide content */
+  overflow: hidden;
+}
+
+#wrapper #container #center .right-corner .left-corner {
+  /* Because of the lack of min-height, we use height as an alternative */
+  height: 400px;
+}
+
+fieldset {
+  /* Don't draw backgrounds on fieldsets in IE, as they look really bad. */
+  background: none;
+}
+
+div.vertical-tabs ul.vertical-tabs-list li.first {
+  background-image: none;
+}
+
+ul.primary {
+  /* Fix missing top margin */
+  position: relative; /* LTR */
+/*  top: 0.5em; */
+}
+
+/* Prevent fieldsets from shifting when changing collapsed state. */
+html.js fieldset.collapsible {
+  top: -1em;
+}
+html.js fieldset.collapsed {
+  top: 0;
+  margin-bottom: 1em;
+}
+
+tr.menu-disabled {
+  /* Use filter to emulate CSS3 opacity */
+  filter: alpha(opacity=50);
+}
+
+#header-region {
+  /* Because of the lack of min-height, we use height as an alternative */
+  height: 1em;
+}
+
+tr.taxonomy-term-preview {
+  filter: alpha(opacity=50);
+}
+
+#attach-hide label,
+#uploadprogress div.message {
+  /* Fading elements in IE causes the text to bleed unless they have a background. */
+  background-color: #ffffff;
+}

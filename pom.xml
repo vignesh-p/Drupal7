@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.photon.phresco</groupId>
+    <artifactId>PHR_Drupal7</artifactId>
+    <name>PHR_Drupal7</name>
+    <version>1.0.0</version>
+    <url></url>
+    <build>
+        <sourceDirectory>source</sourceDirectory>
+        <directory>do_not_checkin/target</directory>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <artifactId>maven-site-plugin</artifactId>
+                    <version>3.1</version>
+                    <dependencies>
+                        <dependency>
+                            <groupId>org.apache.maven.doxia</groupId>
+                            <artifactId>doxia-module-confluence</artifactId>
+                            <version>1.2</version>
+                        </dependency>
+                    </dependencies>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+        <plugins>
+            <plugin>
+                <groupId>com.photon.phresco.plugins</groupId>
+                <artifactId>drupal-maven-plugin</artifactId>
+                <version>1.2.0.9000</version>
+                <extensions>true</extensions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <version>2.3</version>
+                <executions>
+                    <execution>
+                        <id>unpack</id>
+                        <phase>initialize</phase>
+                        <goals>
+                            <goal>unpack</goal>
+                        </goals>
+                        <configuration>
+                            <markersDirectory xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">do_not_checkin/binaries</markersDirectory>
+                            <artifactItems xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<artifactItem>
+    <groupId>binaries</groupId>
+    <artifactId>drupal</artifactId>
+    <version>${drupal.version}</version>
+    <type>zip</type>
+    <overWrite>false</overWrite>
+    <outputDirectory>do_not_checkin/binaries</outputDirectory>
+                </artifactItem>
+              </artifactItems>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+    <profiles>
+        <profile>
+            <id>ci</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <artifactId>maven-clean-plugin</artifactId>
+                        <version>2.5</version>
+                        <executions>
+                            <execution>
+<id>default-clean</id>
+<phase>pre-clean</phase>
+<goals>
+    <goal>clean</goal>
+</goals>
+                            </execution>
+                        </executions>
+                        <configuration>
+                            <filesets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<fileset>
+    <directory>do_not_checkin/build</directory>
+    <includes>
+        <include>**/*</include>
+                  </includes>
+    <followSymlinks>false</followSymlinks>
+                </fileset>
+              </filesets>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+    <dependencies>
+        <dependency>
+            <groupId>binaries</groupId>
+            <artifactId>drupal</artifactId>
+            <version>${drupal.version}</version>
+            <type>zip</type>
+        </dependency>
+    </dependencies>
+    <reporting>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-project-info-reports-plugin</artifactId>
+                <version>2.4</version>
+                <reportSets>
+                    <reportSet>
+                        <reports>
+                            <report>index</report>
+                            <report>modules</report>
+                            <report>dependencies</report>
+                            <report>cim</report>
+                            <report>scm</report>
+                            <report>summary</report>
+                            <report>license</report>
+                        </reports>
+                    </reportSet>
+                </reportSets>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-report-plugin</artifactId>
+                <version>2.12</version>
+            </plugin>
+        </plugins>
+    </reporting>
+    <properties>
+        <drupal.version xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">7.14</drupal.version>
+        <sonar.language xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">php</sonar.language>
+        <sonar.phpPmd.skip xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">false</sonar.phpPmd.skip>
+        <sonar.dynamicAnalysis xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">true</sonar.dynamicAnalysis>
+        <sonar.phpPmd.shouldRun xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">true</sonar.phpPmd.shouldRun>
+        <sonar.phpCodesniffer.shouldRun xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">true</sonar.phpCodesniffer.shouldRun>
+        <sonar.phpDepend.shouldRun xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">true</sonar.phpDepend.shouldRun>
+        <sonar.phpUnit.coverage.shouldRun xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">false</sonar.phpUnit.coverage.shouldRun>
+        <sonar.phpUnit.shouldRun xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">false</sonar.phpUnit.shouldRun>
+        <sonar.phpcpd.shouldRun xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">true</sonar.phpcpd.shouldRun>
+        <sonar.phpcpd.excludes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">source/sql</sonar.phpcpd.excludes>
+        <sonar.phpcpd.excludes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">source/public_html</sonar.phpcpd.excludes>
+        <sonar.phase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">validate</sonar.phase>
+        <sonar.phpCodesniffer.standardArgument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">Drupal</sonar.phpCodesniffer.standardArgument>
+        <sonar.phpDepend.timeout xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">100</sonar.phpDepend.timeout>
+        <sonar.phpPmd.timeout xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">100</sonar.phpPmd.timeout>
+        <sonar.phpCodesniffer.timeout xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">100</sonar.phpCodesniffer.timeout>
+        <sonar.exclusions>**/chaos tool suite/**,**/entity api/**,**/rules/**,**/taxonomy manager/**,**/taxonomy subterms /**,**/ubercart/**,**/views/**</sonar.exclusions>
+    </properties>
+</project>

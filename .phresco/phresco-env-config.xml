@@ -1,0 +1,33 @@
+<environments>
+    
+
+
+
+<environment default="true" desc="Production Environment is used for Development purpose only" name="Production">
+        <Server appliesTo="tech-phpdru7" desc="" name="server">
+            <protocol>http</protocol>
+            <host>localhost</host>
+            <port>80</port>
+            <admin_username/>
+            <admin_password/>
+            <remoteDeployment>false</remoteDeployment>
+            <certificate/>
+            <type>Apache</type>
+            <version>2.3</version>
+            <deploy_dir>c:/wamp/www</deploy_dir>
+            <context>rootcontext</context>
+            <additional_context>/</additional_context>
+        </Server>
+    
+    
+    <Database appliesTo="tech-phpdru7" desc="Database for Drupal" name="Database">
+            <host>localhost</host>
+            <port>3306</port>
+            <username>root</username>
+            <password/>
+            <dbname>exedb</dbname>
+            <type>mysql</type>
+            <version>5.5.1</version>
+        </Database>
+    </environment>
+</environments>

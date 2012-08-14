@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testResults version="1.2">
+<httpSample t="5456" lt="5311" ts="1344852278640" s="true" lb="Drupal_FrameWork" rc="200" rm="OK" tn="Thread Group 1-2" dt="text" by="49593"/>
+<httpSample t="6420" lt="6204" ts="1344852277687" s="true" lb="Drupal_FrameWork" rc="200" rm="OK" tn="Thread Group 1-1" dt="text" by="49593"/>
+<httpSample t="4113" lt="4074" ts="1344852281671" s="true" lb="Drupal_FrameWork" rc="200" rm="OK" tn="Thread Group 1-5" dt="text" by="49593"/>
+<httpSample t="5056" lt="5003" ts="1344852284265" s="true" lb="Drupal_FrameWork" rc="200" rm="OK" tn="Thread Group 1-2" dt="text" by="49592"/>
+<httpSample t="6030" lt="5986" ts="1344852284296" s="true" lb="Drupal_FrameWork" rc="200" rm="OK" tn="Thread Group 1-1" dt="text" by="49593"/>
+<httpSample t="5176" lt="4936" ts="1344852285781" s="true" lb="Drupal_FrameWork" rc="200" rm="OK" tn="Thread Group 1-5" dt="text" by="49593"/>
+<httpSample t="4760" lt="4718" ts="1344852289328" s="true" lb="Drupal_FrameWork" rc="200" rm="OK" tn="Thread Group 1-2" dt="text" by="49593"/>
+<httpSample t="4624" lt="4580" ts="1344852290328" s="true" lb="Drupal_FrameWork" rc="200" rm="OK" tn="Thread Group 1-1" dt="text" by="49593"/>
+<httpSample t="5317" lt="5271" ts="1344852290968" s="true" lb="Drupal_FrameWork" rc="200" rm="OK" tn="Thread Group 1-5" dt="text" by="49593"/>
+<httpSample t="4006" lt="3963" ts="1344852294093" s="true" lb="Drupal_FrameWork" rc="200" rm="OK" tn="Thread Group 1-2" dt="text" by="49593"/>
+<httpSample t="5575" lt="5531" ts="1344852294953" s="true" lb="Drupal_FrameWork" rc="200" rm="OK" tn="Thread Group 1-1" dt="text" by="49593"/>
+<httpSample t="20416" lt="20374" ts="1344852280640" s="true" lb="Drupal_FrameWork" rc="200" rm="OK" tn="Thread Group 1-4" dt="text" by="49593"/>
+<httpSample t="5341" lt="5296" ts="1344852296281" s="true" lb="Drupal_FrameWork" rc="200" rm="OK" tn="Thread Group 1-5" dt="text" by="49593"/>
+<httpSample t="4327" lt="4283" ts="1344852298093" s="true" lb="Drupal_FrameWork" rc="200" rm="OK" tn="Thread Group 1-2" dt="text" by="49593"/>
+<httpSample t="23085" lt="23031" ts="1344852279656" s="true" lb="Drupal_FrameWork" rc="200" rm="OK" tn="Thread Group 1-3" dt="text" by="49593"/>
+<httpSample t="4386" lt="4340" ts="1344852300531" s="true" lb="Drupal_FrameWork" rc="200" rm="OK" tn="Thread Group 1-1" dt="text" by="49593"/>
+<httpSample t="4397" lt="4349" ts="1344852301625" s="true" lb="Drupal_FrameWork" rc="200" rm="OK" tn="Thread Group 1-5" dt="text" by="49593"/>
+<httpSample t="4259" lt="4215" ts="1344852302734" s="true" lb="Drupal_FrameWork" rc="200" rm="OK" tn="Thread Group 1-3" dt="text" by="49592"/>
+<httpSample t="7764" lt="7659" ts="1344852301062" s="true" lb="Drupal_FrameWork" rc="200" rm="OK" tn="Thread Group 1-4" dt="text" by="49593"/>
+<httpSample t="2750" lt="2706" ts="1344852307000" s="true" lb="Drupal_FrameWork" rc="200" rm="OK" tn="Thread Group 1-3" dt="text" by="49592"/>
+<httpSample t="2796" lt="2744" ts="1344852308828" s="true" lb="Drupal_FrameWork" rc="200" rm="OK" tn="Thread Group 1-4" dt="text" by="49592"/>
+<httpSample t="3226" lt="3184" ts="1344852309750" s="true" lb="Drupal_FrameWork" rc="200" rm="OK" tn="Thread Group 1-3" dt="text" by="49593"/>
+<httpSample t="2893" lt="2851" ts="1344852311625" s="true" lb="Drupal_FrameWork" rc="200" rm="OK" tn="Thread Group 1-4" dt="text" by="49593"/>
+<httpSample t="3171" lt="3122" ts="1344852312968" s="true" lb="Drupal_FrameWork" rc="200" rm="OK" tn="Thread Group 1-3" dt="text" by="49593"/>
+<httpSample t="2688" lt="2644" ts="1344852314531" s="true" lb="Drupal_FrameWork" rc="200" rm="OK" tn="Thread Group 1-4" dt="text" by="49593"/>
+
+</testResults>

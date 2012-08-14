@@ -1,0 +1,172 @@
+<?php
+
+/**
+ * @file
+ * Enables multi-user shopmenus.
+ */
+ 
+ function shopmenu_init() {
+    global $user;
+	if($user->uid == 1) {
+	    global $custom_theme;
+	    $custom_theme = 'seven';
+	}
+  
+} 
+
+
+ 
+/**
+ * Implements hook_node_info().
+ */
+function shopmenu_node_info() {
+  return array(
+    'shopmenu' => array(
+      'name' => t('shopmenu entry'),
+      'base' => 'shopmenu',
+      'description' => t('Use for multi-user shopmenus. Every user gets a personal shopmenu.'),
+    )
+  );
+}
+
+/**
+ * Implements hook_help().
+ */
+function shopmenu_help($path, $arg) {
+  switch ($path) {
+    case 'admin/help#shopmenu':
+      $output = '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t("The shopmenu module allows registered users to maintain an online journal, or <em>shopmenu</em>. shopmenus are made up of individual <em>shopmenu entries</em>. By default, the shopmenu entries are displayed by creation time in descending order, with comments enabled, and are promoted to the site's front page. For more information, see the online handbook entry for <a href='@shopmenu'>shopmenu module</a>.", array('@shopmenu' => 'http://drupal.org/handbook/modules/shopmenu/')) . '</p>';
+      $output .= '<h3>' . t('Uses') . '</h3>';
+      $output .= '<dl>';
+      $output .= '<dt>' . t('Single-user shopmenus') . '</dt>';
+      $output .= '<dd>' . t("Each user's shopmenu entries are automatically displayed with a link to the user's main shopmenu page. You can create as many single-user shopmenus as you have site users with permission to create shopmenu content.") . '</dd>';
+      $output .= '<dt>' . t('Multi-user shopmenus') . '</dt>';
+      $output .= '<dd>' . t("shopmenu entries from each single-user shopmenu are also aggregated into one central multi-user shopmenu, which displays the shopmenu content of all users in a single listing.") . '</dd>';
+      $output .= '<dt>' . t('Navigation') . '</dt>';
+      $output .= '<dd>' . t("There is an optional <em>shopmenus</em> menu item added to the Navigation menu, which displays all shopmenus available on your site, and a <em>My shopmenu</em> item displaying the current user's shopmenu entries.") . '</dd>';
+      $output .= '<dt>' . t('Blocks') . '</dt>';
+      $output .= '<dd>' . t('The shopmenu module also creates a default <em>Recent shopmenu posts</em> block that may be enabled at the <a href="@blocks">blocks administration page</a>.', array('@blocks' => url('admin/structure/block'))) . '</dd>';
+      $output .= '</dl>';
+      return $output;
+  }
+}
+
+/**
+ * Implements hook_form().
+ */
+function shopmenu_form($node, $form_state) {
+  return node_content_form($node, $form_state);
+}
+
+
+/**
+ * Implements hook_menu().
+ */
+function shopmenu_menu() {
+  $items['shopmenu'] = array(
+    'title' => 'shopmenus',
+    'page callback' => 'shopmenu_page_last',
+    'access arguments' => array('access content'),
+    'type' => MENU_SUGGESTED_ITEM,
+    'file' => 'shopmenu.pages.inc',
+  );
+ 
+  return $items;
+}
+
+
+
+/**
+ * Implements hook_block_save().
+ */
+function shopmenu_block_save($delta = '', $edit = array()) {
+  if ($delta == 'recent') {
+    variable_set('shopmenu_block_count', $edit['shopmenu_block_count']);
+  }
+}
+
+
+
+function block_menu_function() {
+	global $user;
+//	echo $base_path;
+	$query = db_query("SELECT link_path,link_title FROM {menu_links} WHERE menu_name = :menu_name AND depth = :depth AND hidden = :hidden ORDER BY weight ASC", array(':menu_name'=>'menu-menu-secondary-menu', ':depth'=>1, ':hidden'=>0)); 
+	
+	$links = '<ul class="menu">';
+	$i=1;
+    $alias = explode('/', request_uri()); // Might as well save a db hit
+    $sub = $alias[3];
+    $alias = $alias[2];
+    
+	foreach($query as $val){
+   $cls = '';
+		if($val->link_title == 'Home'){
+       if($alias == 'products')
+          $cls =' selectedMenu';
+      $clsValue = '1 '.$cls;
+   }
+   else if($val->link_title == 'Products'){
+      if($alias == 'products')
+          $cls =' selectedMenu';
+       $clsValue ='2 '.$cls; 
+   }
+   else if($val->link_title == 'Specials'){
+     if($alias == 'specials')
+          $cls =' selectedMenu';
+       $clsValue ='3 '.$cls; 
+   }
+   else if($val->link_title == 'My Account'){
+      if($alias == 'user' && $sub=='')
+          $cls =' selectedMenu';
+       $clsValue ='4 '.$cls; 
+    }	
+    else if($val->link_title == 'Sign Up'){ 
+      if($alias == 'user' && $sub == 'register')
+          $cls =' selectedMenu';
+       $clsValue ='4 '.$cls; 
+      
+    }
+    else if($val->link_title == 'Shopping Cart'){
+       if($alias == 'cart')
+          $cls =' selectedMenu';
+       $clsValue ='7 '.$cls; 
+   }
+	  else if($val->link_title == 'Contact Us'){
+        if($alias == 'node' && $sub == '51')
+          $cls =' selectedMenu';
+       $clsValue ='6 '.$cls; 
+    }
+		else if($val->link_title == 'About Us'){
+        if($alias == 'node' && $sub == '52')
+          $cls =' selectedMenu';
+       $clsValue ='8 '.$cls; 
+    }
+ 
+		if($val->link_title == 'Sign Up'){
+			if($user->uid == 0)
+				$links .= '<li><a href="'.base_path().$val->link_path.'" class="nav'.$clsValue.'">'.$val->link_title.'</a></li>'; 
+		} 
+    else if($val->link_title == 'My Account'){
+				if($user->uid > 0)
+				$links .= '<li><a href="'.base_path().$val->link_path.'" class="nav'.$clsValue.'">'.$val->link_title.'</a></li>'; 
+		} 
+    else {
+			$links .= '<li><a href="'.base_path().$val->link_path.'" class="nav'.$clsValue.'">'.$val->link_title.'</a></li>'; 
+		}	
+		$i++;
+	}
+	if($user->uid == 1)
+		$links .= '<li><a href="'.base_path().'/admin" class="nav2"> Admin</a></li>';
+		
+	$links .= '</ul>';
+
+	
+	return $links;
+}
+
+function shopmenu_form_alter(&$form, &$form_state, $form_id) {
+ if ($form_id == 'uc_cart_view_form') {
+    $form['items']['#columns']['remove']['weight']= 5;
+  }
+} 	

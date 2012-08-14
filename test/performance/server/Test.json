@@ -1,0 +1,1 @@
+{"testAgainst":"Server","testName":"Test","name":["Test"],"context":["/"],"contextType":["GET"],"contextPostData":[""],"encodingType":["UTF-8"],"dbPerName":[""],"queryType":["Select Statement"],"query":[""],"noOfUsers":5,"rampUpPeriod":5,"loopCount":5}
